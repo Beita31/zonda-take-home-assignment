@@ -3,6 +3,9 @@ export class SearchResultsPage {
     this.page = page;
 
     // Filters
+    this.priceFilter = page.getByLabel('select prices');
+    this.bedroomsFilter = page.getByLabel('select bedrooms');
+
 
     /** 
      * Listing cards
@@ -52,4 +55,38 @@ export class SearchResultsPage {
     await expect(this.getCardHomeType(card)).toBeVisible();
     await expect(this.getCardAddress(card)).toBeVisible();
   }
+
+  // Dropdowns / Filter selectors functions to select corresponding min price
+  async selectMinPrice(value) {
+    // Open the price dropdown
+    await this.priceFilter.click();
+  
+    // Click the matching <li> under <ul id="minpricedw">
+    const option = this.page.locator('#minpricedw li.minpricelist', { hasText: value });
+    await option.waitFor(); // ensures dropdown rendered
+    await option.click();
+  }
+
+  // Dropdowns / Filter selectors functions to select corresponding max price
+  async selectMaxPrice(value) {
+    // Open the price dropdown
+    await this.priceFilter.click();
+  
+    // Click the matching <li> under <ul id="maxpricedw">
+    const option = this.page.locator('#maxpricedw li.maxpricelist', { hasText: value });
+    await option.waitFor(); // ensures dropdown rendered
+    await option.click();
+  }
+
+  // Dropdowns / Filter selectors functions to select corresponding bedrooms
+  async selectBedrooms(value) {
+    // Open the bedrooms dropdown
+    await this.bedroomsFilter.click();
+  
+    // Click the matching <label> under <div id="bd">
+    const option = this.page.locator('#bd label.container.item', { hasText: value });
+    await option.waitFor(); // ensures dropdown rendered
+    await option.click();
+  }
+  
 }
