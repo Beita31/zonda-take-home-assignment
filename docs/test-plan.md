@@ -7,14 +7,13 @@ Listing Search functionality including:
 - Bedroom filters
 - Listing results rendering
 - Pagination
-- Load More behavior
 
 ---
 
 ## 2. Objectives
 - Validate that search returns accurate and relevant listings.
 - Ensure filters apply correctly and consistently according to filter criteria (individually and combined).
-- Confirm listing cards display all mandatory fields (title, price, bedrooms, location, thumbnail).
+- Confirm listing cards display all mandatory fields (title, home type, address, thumbnail).
 - Verify boundary conditions (minimum, maximum, input/output range exact values, transitions) and basic error behavior/handling (empty states, invalid inputs).
 - Identify high-value automation candidates and design reliable automated data checks to verify backend correctness.
 
@@ -25,9 +24,8 @@ Listing Search functionality including:
 - Price min/max/input-output range exact values/transitions filtering
 - Bedroom filtering
 - Combined filter conditions for previous filters (price and bedroom)
-- Listing card validation
+- Listing card validation (mandatory fields display)
 - Pagination
-- Load More behavior
 - API error fallback behavior related to listings
 - Basic data validation (SQL assumptions) related to listings
 - Network responses (mocking for automation when data unstable).
@@ -44,7 +42,7 @@ Listing Search functionality including:
 - Deep accessibility audit
 - Performance or load testing beyond basic responsiveness
 - Security testing beyond basic input validation (penetration testing, auth bypass)
-- Extensive testing beyond basic regression checks on other listing filters (For sale, Home type) 
+- Regression testing beyond basic regression checks on other listing filters (For sale, Home type) 
 
 ---
 
@@ -54,8 +52,7 @@ Listing Search functionality including:
 - API endpoints are undocumented; wildcard interception (`**/listings**`) will be used where needed as if Search API endpoint exists.
 - DB schema unknown. Logical DB schema assumed for SQL validation examples.
 - No proprietary or internal system details are accessed.
-- Listing card fields are assumed stable - mandatory (title, price, bedrooms, city, thumbnail).
-- Pagination implemented as either numbered pages or "Load more" button.
+- Listing card fields are assumed stable - mandatory (title, home type, address, thumbnail).
 - User persona is a general homebuyer performing searches.
 
 ---
@@ -83,7 +80,7 @@ Listing Search functionality including:
 - Unstructured edge cases
 
 ### Automation (Playwright)
-- Smoke test: basic search (city/location) and listing rendering with mandatory fields (title, price, bedrooms, city, thumbnail)
+- Smoke test: basic search (city/location) and listing rendering with mandatory fields (title, home type, address, thumbnail)
 - Filter test: filtering using network mocking for reliable assertions (price range & bedrooms filter)
 - Regression test: other basic filtering still works (For sale, Home type)
 
