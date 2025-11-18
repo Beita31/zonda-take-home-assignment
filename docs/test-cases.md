@@ -1,4 +1,5 @@
-# Feature: Listing Search on Livabl.com
+```gherkin
+Feature: Listing Search on Livabl.com
 Users are able to search for listings and retrieve results using specific filters.
 
   Scenario: Basic keyword search retrieves listings
@@ -88,3 +89,4 @@ Users are able to search for listings and retrieve results using specific filter
     When I click a numeric page (e.g., "2")
     Then the page indicator should highlight page "2"
     And both arrows should be enabled unless page "2" is the first or last page
+```
