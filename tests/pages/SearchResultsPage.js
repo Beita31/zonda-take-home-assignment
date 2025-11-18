@@ -16,8 +16,6 @@ export class SearchResultsPage {
      */
     this.resultsSection = page.locator('div.results');
     this.cards = page.locator('div.results a.card');
-
-    // Pagination
     
   }
 
