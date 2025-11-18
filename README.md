@@ -90,7 +90,7 @@ npx playwright test --debug
 npx playwright test --headed
 
 ## 📂 Project Structure
-/docs
+- /docs
   - data-sql-component.md
   - defect-report.md
   - exploratory-testing-charter.md
@@ -98,12 +98,15 @@ npx playwright test --headed
   - screenshot-2025-11-17-12-36.png
   - test-cases.md
   - test-plan.md
-/tests
+
+- /tests
   - search.smoke.spec.js
   - search.filter.spec.js
-/pages
+
+- /pages
   - HomePage.js
   - SearchResultsPage.js
-package.json
-playwright.config.js
-README.md
+
+- package.json
+- playwright.config.js
+- README.md
