@@ -4,11 +4,11 @@
 Incorrect Price Range Text Display when Max Price set to "Any Price"
 
 ## Environment 
-URL: https://www.livabl.com
-Browser version: Chrome 117
-Operating System: Windows 10
-Device: Desktop
-Environment: Live production site
+- URL: https://www.livabl.com
+- Browser version: Chrome 117
+- Operating System: Windows 10
+- Device: Desktop
+- Environment: Live production site
 
 ## Steps to Reproduce
 - Go to Search page
