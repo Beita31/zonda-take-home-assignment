@@ -1,3 +1,5 @@
+```sql
+
 Assumed Logical Schema
 
 TABLE listings (
@@ -42,3 +44,5 @@ Validates bedroom values are within acceptable domain limits.
 SELECT id, title, bedrooms
 FROM listings
 WHERE bedrooms < 0;
+
+```
