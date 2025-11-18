@@ -31,26 +31,4 @@ test('Smoke - Perform basic search from homepage', async ({ page }) => {
   // Single validation to verify the respective mandatory fields for first result/card
   await results.verifyMandatoryFields(firstCard, expect);
 
-
-
-
-
-
-
-
-  
-
-
-
-  // Check for Home Name (property title or community name).
-  await expect(firstCard.getByRole('heading')).toBeVisible();
-
-  // Check for Thumbnail Image (visual representation of the home).
-  await expect(firstCard.locator('img')).toBeVisible();
-
-  // Check for Home Type (e.g., Condo, Townhome, Single-Family).
-  await expect(firstCard.getByText(/condo|town|home|apartment|suite|unit/i)).toBeVisible();
-
-  // Check for Address (street + city or location).
-  await expect(firstCard.getByText(/st|ave|road|rd|drive|dr|blvd|street|avenue|way/i)).toBeVisible();
 });
