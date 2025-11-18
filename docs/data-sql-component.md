@@ -7,6 +7,7 @@ TABLE listings (
   title           VARCHAR(255),     -- home name 
   price           DECIMAL(10,2),    -- stored in whole dollars
   bedrooms        INTEGER,          -- number of bedrooms
+  home_type       ENUM('Condo', 'Townhouse', 'Single-Family-Home') NOT NULL, -- restricted list values
   street          VARCHAR(255),     -- street location
   city            VARCHAR(100),     -- city location
   state           CHAR(2),          -- state location
