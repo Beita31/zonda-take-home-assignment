@@ -83,6 +83,12 @@ npx playwright test
 ## ▶ Run UI Mode
 npx playwright test --ui
 
+## ▶ Run Debug Mode
+npx playwright test --debug
+
+## ▶ Run Headed Mode
+npx playwright test --headed
+
 ## 📂 Project Structure
 /docs
   - data-sql-component.md
