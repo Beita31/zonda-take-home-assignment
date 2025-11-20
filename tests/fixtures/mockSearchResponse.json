@@ -1,0 +1,13 @@
+{
+    "listings": [
+      {
+        "id": 1,
+        "name": "Mock Condo",
+        "home_type": "Condo",
+        "address": "100 Mock St, Vancouver",
+        "bedrooms": 2,
+        "price": 500000,
+        "thumbnail": "mock.jpg"
+      }
+    ]
+  }

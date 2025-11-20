@@ -2,36 +2,38 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage.js';
 import { SearchResultsPage } from '../pages/SearchResultsPage.js';
 
-test('Smoke - Perform basic search from homepage', async ({ page }) => {
-  // Initialize pages objects for interactions structure
-  const home = new HomePage(page);
-  const results = new SearchResultsPage(page);
 
-  // Navigate to homepage as starting point
-  await home.goto();
+test.describe('Listing Search – Search behaviors', () => {
+    test('Smoke - Perform basic search from homepage', async ({ page }) => {
+        // Initialize pages objects for interactions structure
+        const home = new HomePage(page);
+        const results = new SearchResultsPage(page);
 
-  // Enter a search term into the search field
-  await home.typeSearch('Vancouver');
+        // Navigate to homepage as starting point
+        await home.goto();
 
-  // Click on the Search button to submit search request and navigate to Search Results Page
-  await home.submitSearch();
+        // Enter a search term into the search field
+        await home.typeSearch('Vancouver');
 
-  // Wait for the search results from Search Results Page to load and stabilize
-  await results.waitForResults();
+        // Click on the Search button to submit search request and navigate to Search Results Page
+        await home.submitSearch();
 
-  // Retrieve all visible listing cards displayed after search
-  const cards = await results.getListingCards();
+        // Wait for the search results from Search Results Page to load and stabilize
+        await results.waitForResults();
 
-  // Ensure at least one result exists to confirm search worked
-  expect(cards.length).toBeGreaterThan(0);
+        // Retrieve all visible listing cards displayed after search
+        const cards = await results.getListingCards();
 
-  // Retrieve first listing card now search worked
-  const firstCard = cards[0];
+        // Ensure at least one result exists to confirm search worked
+        expect(cards.length).toBeGreaterThan(0);
 
-  //Ensure all mandatory field checks (display) are validated on card/result
-  expect(this.getCardName(firstCard)).toBeVisible();
-  expect(this.getCardThumbnail(firstCard)).toBeVisible();
-  expect(this.getCardHomeType(firstCard)).toBeVisible();
-  expect(this.getCardAddress(firstCard)).toBeVisible();
+        // Retrieve first listing card now search worked
+        const firstCard = cards[0];
 
+        //Ensure all mandatory field checks (display) are validated on card/result
+        expect(this.getCardName(firstCard)).toBeVisible();
+        expect(this.getCardThumbnail(firstCard)).toBeVisible();
+        expect(this.getCardHomeType(firstCard)).toBeVisible();
+        expect(this.getCardAddress(firstCard)).toBeVisible();
+    });
 });
