@@ -13,6 +13,7 @@ test.describe('Listing Search – Filter Behaviors with Mocked API', () => {
     
     // --- Page Object Setup ---
     const home = new HomePage(page);
+
     const results = new SearchResultsPage(page);
 
     // --- Step 1: Mock network response (stub) ---
@@ -47,8 +48,11 @@ test.describe('Listing Search – Filter Behaviors with Mocked API', () => {
 
     // --- STEP 8: Verify mandatory fields for first card ---
     const firstCard = cards[0];
-    // Single validation to verify the respective mandatory fields for first result/card
-    await results.verifyMandatoryFields(firstCard, expect);
+    //Ensure all mandatory field checks (display) are validated on card/result
+    expect(this.getCardName(firstCard)).toBeVisible();
+    expect(this.getCardThumbnail(firstCard)).toBeVisible();
+    expect(this.getCardHomeType(firstCard)).toBeVisible();
+    expect(this.getCardAddress(firstCard)).toBeVisible();
 
     });
   });
