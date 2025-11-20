@@ -102,6 +102,8 @@ npx playwright test --headed
 - /tests
   - search.smoke.spec.js
   - search.filter.spec.js
+  - /fixtures
+    - mock.SearchResponse.json
 
 - /pages
   - HomePage.js
