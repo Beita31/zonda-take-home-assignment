@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { SearchResultsPage } from '../pages/SearchResultsPage';
+import { HomePage } from '../pages/HomePage.js';
+import { SearchResultsPage } from '../pages/SearchResultsPage.js';
 
 test('Smoke - Perform basic search from homepage', async ({ page }) => {
   // Initialize pages objects for interactions structure
