@@ -28,7 +28,10 @@ test('Smoke - Perform basic search from homepage', async ({ page }) => {
   // Retrieve first listing card now search worked
   const firstCard = cards[0];
 
-  // Single validation to verify the respective mandatory fields for first result/card
-  await results.verifyMandatoryFields(firstCard, expect);
+  //Ensure all mandatory field checks (display) are validated on card/result
+  expect(this.getCardName(firstCard)).toBeVisible();
+  expect(this.getCardThumbnail(firstCard)).toBeVisible();
+  expect(this.getCardHomeType(firstCard)).toBeVisible();
+  expect(this.getCardAddress(firstCard)).toBeVisible();
 
 });

@@ -16,8 +16,8 @@ export class HomePage {
      * Navigates to the homepage.
      * This is the entry point of the test and ensures we start from a clean page.
      */
-    async goto() {
-      await this.page.goto('/');
+     async goto() {
+      await this.page.goto('/', { waitUntil: 'domcontentloaded' });
     }
   
     // Types a search term into the search box.

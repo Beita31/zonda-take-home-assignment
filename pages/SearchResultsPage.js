@@ -46,14 +46,6 @@ export class SearchResultsPage {
     return card.locator('div.details div.address');
   }
 
-  // waits to perform all mandatory field checks (display) validation on card/result
-  async verifyMandatoryFields(card, expect) {
-    await expect(this.getCardName(card)).toBeVisible();
-    await expect(this.getCardThumbnail(card)).toBeVisible();
-    await expect(this.getCardHomeType(card)).toBeVisible();
-    await expect(this.getCardAddress(card)).toBeVisible();
-  }
-
   // Dropdowns / Filter selectors functions to select corresponding min price
   async selectMinPrice(value) {
     // Open the price dropdown
